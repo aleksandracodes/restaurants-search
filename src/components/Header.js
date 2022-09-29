@@ -19,6 +19,6 @@ const styles = StyleSheet.create({
     },
     boldHeader: {
         fontSize: 40,
-        fontWeight: "bold"
+        fontWeight: 'bold'
     }
 })
