@@ -1,9 +1,10 @@
 import { StyleSheet, View, TextInput } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'
+import { elevation } from '../common/styles'
 
 export default function Search() {
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, elevation]}>
             <FontAwesome 
                 name='search'
                 size={25}
@@ -22,13 +23,10 @@ const styles = StyleSheet.create({
         marginTop: 5,
         marginHorizontal: 25,
         backgroundColor: 'white',
-        shadowColor: 'black',
-        shadowOffset: { width: 5, height: 5 },
-        elevation: 3,
-        shadowOpacity: .1,
         padding: 15,
         borderRadius: 50
     },
+    elevation,
     input: {
         fontSize: 20,
         marginLeft: 10
