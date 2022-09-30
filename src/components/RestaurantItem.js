@@ -4,12 +4,12 @@ import { elevation } from '../common/styles'
 export default function RestaurantItem({restaurant}) {
     return (
         <View style={[styles.elevation, styles.container]}>
-            <Image style={styles.image} source={{uri: restaurant.image_url}} />
-            <View>
-                <Text>{restaurant.name}</Text>
-                <View>
-                    <Text>{restaurant.rating}</Text>
-                    <Text>{restaurant.price}</Text>
+            <Image style={styles.image} source={{uri:restaurant.image_url}} />
+            <View style={styles.infoContainer}>
+                <Text style={styles.header}>{restaurant.name}</Text>
+                <View style={styles.info}>
+                    <Text style={styles.rating}>{restaurant.rating}</Text>
+                    <Text style={styles.money}>{restaurant.price}</Text>
                 </View>
             </View>
         </View>
@@ -32,5 +32,24 @@ const styles = StyleSheet.create({
         height: 75,
         borderRadius: 400,
         marginLeft: 10,
-      },
+    },
+    infoContainer: {
+        flex: 1,
+        paddingHorizontal: 10,
+    },
+    header: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginBottom: 4,
+    },
+    info: {
+        fontWeight: 'bold',
+        flexDirection: 'row',
+    },
+    rating: {
+        marginRight: 20,
+    },
+    money: {
+        color: 'gold',
+    },
 })
