@@ -1,10 +1,15 @@
 import { StyleSheet, Text, View } from 'react-native';
 import useRestaurants from '../hooks/useRestaurants';
+import { useEffect } from 'react';
 
-export default function Restaurants() {
+export default function Restaurants({term}) {
     const [{data, loading, error}, searchRestaurants] = useRestaurants()
 
-    searchRestaurants('Dessert')  // throws an error of an infinite look at the moment
+    useEffect(() => {
+        searchRestaurants(term)
+    }, [term])
+    console.log('----------')
+    console.log({data: data, loading, error})
 
     return (
         <View style={styles.container}>

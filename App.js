@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Categories from './src/components/Categories';
 import Header from './src/components/Header';
+import Restaurants from './src/components/Restaurants';
 import Search from './src/components/Search';
 
 export default function App() {
@@ -46,6 +47,7 @@ export default function App() {
         setTerm={setTerm}
         term={term}
       />
+      <Restaurants term={term} />
       <StatusBar style='auto' />
     </View>
   );
