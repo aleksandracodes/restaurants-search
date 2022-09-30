@@ -19,7 +19,7 @@ export default () => {
                 params: {
                     limit: 15,
                     term,
-                    location: 'Toronto'
+                    location: 'Chicago'
                 },
             });
             setResults({
