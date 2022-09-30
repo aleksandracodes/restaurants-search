@@ -1,19 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';
-import yelp from '../api/yelp';
+import useRestaurants from '../hooks/useRestaurants';
 
 export default function Restaurants() {
-    const searchRestaurants = async () => {
-        const response = await yelp.get('/search', {
-            params: {
-                limit: 15,
-                term: 'Dessert',
-                location: 'Toronto'
-            }
-        })
-        console.log(response)
-    }
+    const [{data, loading, error}, searchRestaurants] = useRestaurants()
 
-    searchRestaurants()
+    searchRestaurants('Dessert')  // throws an error of an infinite look at the moment
 
     return (
         <View style={styles.container}>
